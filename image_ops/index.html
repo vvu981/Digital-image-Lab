@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio TDI Modular</title>
+    <link rel="stylesheet" href="../style.css">
+    <!-- KaTeX para renderizar fórmulas matemáticas -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+</head>
+<body>
+
+    <a class="page-arrow" href="../index.html" aria-label="Volver al selector de módulos">&#8592;</a>
+    <header class="page-header">
+        <h1>Laboratorio Tratamiento Digital de Iágenes</h1>
+        <p class="subtitle">Tratamiento Digital de Imágenes</p>
+    </header>
+
+    <div class="container">
+        <aside class="controls">
+            <input type="file" id="upload" accept="image/*">
+            <select id="opSelector"></select>
+            
+            <div id="operationInfo">
+                <div id="description"></div>
+                <div id="formula"></div>
+            </div>
+            
+            <div id="dynamicParams">
+                <p>Selecciona una operación para ver sus parámetros.</p>
+            </div>
+            
+            <div class="status-bar">
+                <span class="dot idle" id="statusDot"></span>
+                <span id="statusText">Sistema listo</span>
+            </div>
+        </aside>
+
+        <main class="viewer">
+            <div class="image-section">
+                <div class="image-group">
+                    <h3>Imagen Original</h3>
+                    <canvas id="canvasIn"></canvas>
+                    <canvas id="histIn"></canvas>
+                </div>
+                <div class="image-group">
+                    <h3>Imagen Procesada</h3>
+                    <canvas id="canvasOut"></canvas>
+                    <canvas id="histOut"></canvas>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal para mostrar fórmulas -->
+    <div id="formulaModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2>Fórmula Matemática</h2>
+            <div id="formulaDisplay" class="formula-display"></div>
+        </div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones entre dos imágenes — TDI Lab</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+</head>
+<body>
+    <a class="page-arrow" href="../index.html" aria-label="Volver al selector de módulos">&#8592;</a>
+    <header class="page-header">
+        <h1>Operaciones entre dos imágenes</h1>
+        <p class="subtitle">Laboratorio Tratamiento Digital de Imágenes</p>
+    </header>
+
+    <div class="container">
+        <aside class="controls">
+            <label for="uploadA">Imagen A</label>
+            <input type="file" id="uploadA" accept="image/*">
+
+            <label for="uploadB">Imagen B</label>
+            <input type="file" id="uploadB" accept="image/*">
+
+            <p class="helper-text">Ambas imágenes se normalizan a 512×512 px para garantizar compatibilidad.</p>
+
+            <select id="opSelector"></select>
+
+            <div id="operationInfo">
+                <div id="description"></div>
+                <div id="formula"></div>
+            </div>
+
+            <div id="dynamicParams">
+                <p>Selecciona una operación para ver sus parámetros.</p>
+            </div>
+
+            <div class="status-bar">
+                <span class="dot idle" id="statusDot"></span>
+                <span id="statusText">Carga ambas imágenes para comenzar</span>
+            </div>
+        </aside>
+
+        <main class="viewer viewer-binary">
+            <div class="image-section">
+                <div class="image-group">
+                    <h3>Imagen A</h3>
+                    <canvas id="canvasA"></canvas>
+                    <canvas id="histA"></canvas>
+                </div>
+                <div class="image-group">
+                    <h3>Imagen B</h3>
+                    <canvas id="canvasB"></canvas>
+                    <canvas id="histB"></canvas>
+                </div>
+                <div class="image-group">
+                    <h3>Resultado</h3>
+                    <canvas id="canvasOut"></canvas>
+                    <canvas id="histOut"></canvas>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="formulaModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2>Fórmula Matemática</h2>
+            <div id="formulaDisplay" class="formula-display"></div>
+        </div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+</body>
+</html>

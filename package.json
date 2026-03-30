@@ -1,0 +1,22 @@
+{
+  "name": "tdi-image-lab",
+  "version": "1.0.0",
+  "description": "Laboratorio interactivo de Tratamiento Digital de Imágenes",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "image-processing",
+    "digital-image-treatment",
+    "filters",
+    "education"
+  ],
+  "author": "Víctor Valencia",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
