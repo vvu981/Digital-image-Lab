@@ -1,9 +1,9 @@
-import { LabEngine } from '../js/engine.js';
-import { Registry } from '../js/registry.js';
-import { ModalService } from '../js/core/ModalService.js';
-import { HistogramService } from '../js/core/HistogramService.js';
-import { StatusService } from '../js/core/StatusService.js';
-import { convertToGrayscale } from '../js/utils/imageUtils.js';
+import { LabEngine } from '../../js/engine.js';
+import { Registry } from '../../js/registry.js';
+import { ModalService } from '../../js/core/ModalService.js';
+import { HistogramService } from '../../js/core/HistogramService.js';
+import { StatusService } from '../../js/core/StatusService.js';
+import { convertToGrayscale } from '../../js/utils/imageUtils.js';
 
 const modalService = new ModalService();
 const histogramService = new HistogramService();

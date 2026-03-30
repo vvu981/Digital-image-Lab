@@ -1,9 +1,9 @@
-import { BinaryLabEngine } from '../js/binary/BinaryLabEngine.js';
-import { BinaryRegistry } from '../js/binary/registry.js';
-import { ModalService } from '../js/core/ModalService.js';
-import { HistogramService } from '../js/core/HistogramService.js';
-import { StatusService } from '../js/core/StatusService.js';
-import { convertToGrayscale } from '../js/utils/imageUtils.js';
+import { BinaryLabEngine } from '../../js/binary/BinaryLabEngine.js';
+import { BinaryRegistry } from '../../js/binary/registry.js';
+import { ModalService } from '../../js/core/ModalService.js';
+import { HistogramService } from '../../js/core/HistogramService.js';
+import { StatusService } from '../../js/core/StatusService.js';
+import { convertToGrayscale } from '../../js/utils/imageUtils.js';
 
 const CANVAS_SIZE = 512;
 
