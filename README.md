@@ -51,6 +51,38 @@ npx http-server
 # Abre: http://localhost:8080
 ```
 
+### Opción 3: Con Docker 🐳
+
+**Requisitos:** Docker y Docker Compose instalados
+
+```bash
+# 1. Construir e iniciar el contenedor
+docker-compose up --build
+
+# 2. Accede a http://localhost:5173
+```
+
+**Comandos útiles:**
+```bash
+# Detener el contenedor
+docker-compose down
+
+# Ver logs en tiempo real
+docker-compose logs -f
+
+# Reconstruir la imagen
+docker-compose build --no-cache
+
+# Ejecutar en segundo plano
+docker-compose up -d
+```
+
+**Ventajas:**
+✅ Sin dependencias locales (solo Docker)  
+✅ Entorno aislado y reproducible  
+✅ Funciona igual en Windows, Mac, Linux  
+✅ Ideal para despliegue en producción  
+
 ---
 
 ```

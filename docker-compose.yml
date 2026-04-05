@@ -1,0 +1,47 @@
+#version: '3.9'
+
+services:
+  tdi-lab:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    
+    container_name: tdi-image-lab
+    
+    ports:
+      - "5173:5173"  # Puerto de desarrollo Vite
+    
+    volumes:
+      # Volumen para código fuente (desarrollo en caliente)
+      - .:/app
+      # Volumen para node_modules para evitar reinstalaciones
+      - /app/node_modules
+    
+    environment:
+      - NODE_ENV=development
+      - VITE_HOST=0.0.0.0
+      - DOCKER_ENV=true
+    
+    # Reinicia automáticamente si falla
+    restart: unless-stopped
+    
+    # Permite Ctrl+C en la terminal
+    stdin_open: true
+    tty: true
+
+  # Servicio opcional para producción (descomentar si es necesario)
+  # tdi-lab-prod:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #     target: production
+  #   
+  #   container_name: tdi-image-lab-prod
+  #   
+  #   ports:
+  #     - "5174:5173"
+  #   
+  #   environment:
+  #     - NODE_ENV=production
+  #   
+  #   restart: always

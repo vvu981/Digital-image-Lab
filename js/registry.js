@@ -8,6 +8,8 @@ import { GammaStrategy } from './strategies/GammaStrategy.js';
 import { NormalizeStrategy } from './strategies/NormalizeStrategy.js';
 import { EqualizeStrategy } from './strategies/EqualizeStrategy.js';
 import { GaussianBlurStrategy } from './strategies/GaussianBlurStrategy.js';
+import { AverageFilterStrategy } from './strategies/AverageFilterStrategy.js';
+import { MedianFilterStrategy } from './strategies/MedianFilterStrategy.js';
 
 export const Registry = {
     "norm": {
@@ -33,5 +35,13 @@ export const Registry = {
     "gauss": {
         name: "Filtro Gaussiano",
         strategy: new GaussianBlurStrategy()
-    }
+    },
+    "avg": {
+        name: "Filtro de Media",
+        strategy: new AverageFilterStrategy()
+    },
+    "median": {
+        name: "Filtro Mediana",
+        strategy: new MedianFilterStrategy()
+    },
 };

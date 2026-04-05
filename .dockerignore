@@ -1,0 +1,31 @@
+# Archivos a ignorar en la construcción de Docker
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Node
+node_modules
+npm-debug.log
+npm-error.log
+yarn-error.log
+
+# Vite
+dist
+.vite
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Otro
+.env
+.env.local
+.env.*.local
+README.md
+LICENSE

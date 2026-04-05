@@ -22,7 +22,7 @@ export class GammaStrategy extends BaseStrategy {
     }
 
     getFormulaLatex() {
-        return "out(x,y) = 255 \\times \\left(\\frac{in(x,y)}{255}\\right)^{\\gamma}";
+        return "out(x,y) = c \\times \\left(r\\right)^{\\gamma}";
     }
 
     getControls() {
