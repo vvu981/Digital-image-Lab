@@ -10,6 +10,7 @@ import { EqualizeStrategy } from './strategies/EqualizeStrategy.js';
 import { GaussianBlurStrategy } from './strategies/GaussianBlurStrategy.js';
 import { AverageFilterStrategy } from './strategies/AverageFilterStrategy.js';
 import { MedianFilterStrategy } from './strategies/MedianFilterStrategy.js';
+import { WatershedStrategy } from './strategies/WatershedStrategy.js';
 
 export const Registry = {
     "norm": {
@@ -43,5 +44,9 @@ export const Registry = {
     "median": {
         name: "Filtro Mediana",
         strategy: new MedianFilterStrategy()
+    },
+    "watershed": {
+        name: "Watershed (Segmentación)",
+        strategy: new WatershedStrategy()
     },
 };

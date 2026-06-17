@@ -3,6 +3,7 @@ import { Registry } from '../../js/registry.js';
 import { ModalService } from '../../js/core/ModalService.js';
 import { HistogramService } from '../../js/core/HistogramService.js';
 import { StatusService } from '../../js/core/StatusService.js';
+import { StepsService } from '../../js/core/StepsService.js';
 import { convertToGrayscale } from '../../js/utils/imageUtils.js';
 
 const modalService = new ModalService();
@@ -11,6 +12,7 @@ const statusService = new StatusService({
     dot: document.getElementById('statusDot'),
     text: document.getElementById('statusText'),
 });
+const stepsService = new StepsService();
 
 const uiRefs = {
     selector: document.getElementById('opSelector'),
@@ -32,6 +34,20 @@ const SingleImageLab = new LabEngine({
 });
 SingleImageLab.init();
 SingleImageLab.setStatus('idle', 'Carga una imagen para comenzar');
+
+// Vincula StepsService para algoritmos que muestren pasos
+stepsService.bind();
+const originalOnStrategyChanged = SingleImageLab.onStrategyChanged.bind(SingleImageLab);
+SingleImageLab.onStrategyChanged = function(strategy) {
+    originalOnStrategyChanged(strategy);
+    
+    // Si la estrategia soporta mostrar pasos (tiene setStepsCallback)
+    if (typeof strategy.setStepsCallback === 'function' && SingleImageLab.canvasIn) {
+        strategy.setStepsCallback((steps, result) => {
+            stepsService.showSteps(steps, SingleImageLab.canvasIn.width, SingleImageLab.canvasIn.height);
+        });
+    }
+};
 
 const uploadInput = document.getElementById('upload');
 if (uploadInput) {

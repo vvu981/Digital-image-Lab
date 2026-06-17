@@ -903,6 +903,86 @@ body::before {
   text-align: left;
 }
 
+/* ─── Steps Display para Algoritmos ────────────────────────────────────────── */
+.steps-display {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glow);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+
+.steps-display canvas {
+  max-width: 100%;
+  max-height: 350px;
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius-sm);
+  object-fit: contain;
+}
+
+.steps-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 24px;
+  padding: 16px;
+  background: rgba(0, 245, 255, 0.03);
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius-md);
+}
+
+.step-indicator {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+  letter-spacing: 0.1em;
+  min-width: 120px;
+  text-align: center;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: 1px solid var(--border-glow);
+  border-radius: var(--radius-sm);
+  background: rgba(0, 245, 255, 0.08);
+  color: var(--neon-cyan);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+}
+
+.btn:not(:disabled):hover {
+  background: rgba(0, 245, 255, 0.15);
+  box-shadow: 0 0 12px rgba(0, 245, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn.btn-secondary {
+  color: var(--text-secondary);
+  border-color: var(--border-dim);
+}
+
+.btn.btn-primary {
+  color: var(--neon-cyan);
+  border-color: var(--border-glow);
+}
+
 .modal-close {
   position: absolute;
   top: 16px;
