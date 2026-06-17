@@ -14,7 +14,7 @@ COPY package.json ./
 COPY package-lock.json* ./
 
 # Instala dependencias
-RUN npm ci || npm install
+RUN npm install
 
 # Copia el código fuente
 COPY . .
